@@ -3,7 +3,7 @@ $monitorServices = @("nsi")
 $logFile = "C:\service_monitor.log"
 
 
-# max number of lines in the log file. this number of lines will log approx 20days/n where n == number of services being monitored, and should max out around 1.1MB
+# max number of lines in the log file. 30250 lines will log approx 20days/n where n == number of services being monitored, and should max out around 1.1MB
 $retention = 30250  
 if ( Test-Path -Path $logFile ) { Set-Content -Path $logFile -Value $( Get-Content -Path $logFile -Last $retention ) }
 
